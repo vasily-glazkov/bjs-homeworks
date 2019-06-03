@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 function calculateQuadraticEquation() {
 	let a = +window.a.value;
@@ -47,5 +47,27 @@ function calculateAverageRating() {
 
 function getAverageMark(marks) {
 	// код для задачи №3 писать здесь
-	//return averageMark;
+	let sum = 0;
+	
+	if (marks.length > 5) {
+		console.log("Слишком много цифр");
+		while (marks.length > 5) {
+			marks.pop();
+		}
+	}
+	
+	for (let i = 0; i <= marks.length; i++) {
+		sum += parseInt(marks[i]);
+	}
+	
+	return sum / marks.length;
 }
+
+
+
+
+
+
+
+
+
