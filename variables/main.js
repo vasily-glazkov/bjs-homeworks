@@ -9,8 +9,9 @@ console.log("Средняя оценка: " + mean);
 
 // Задание №2
 
-let name = "Vasily Glazkov";
-console.log(`Привет, мир! Меня зовут ${name}.`);
+let name = "Vasily";
+let surname = "Glazkov";
+console.log(`Привет, мир! Меня зовут ${name} ${ surname}.`);
 
 // Задание №3
 
@@ -19,4 +20,4 @@ let y = 22;
 let z = 0;
 
 let result = x * y + 5 * z + x - 1;
-console.log(result);
+console.log("Результат равен: " + result);
