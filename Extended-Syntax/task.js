@@ -33,12 +33,6 @@ function calculateDrinkTask() {
 	window.drink.textContent = drink;
 }
 
-function askDrink(name, dateOfBirthday) {
-	// код для задачи №2 писать здесь
-	//console.log(result)
-	//return result;
-}
-
 function calculateAverageRating() {
 	let marks = window.marks.value.split("").map(Number).filter((n) => !isNaN(n) && n > 0);
 	let averageMark = getAverageMark(marks);
@@ -46,28 +40,23 @@ function calculateAverageRating() {
 }
 
 function getAverageMark(marks) {
-	// код для задачи №3 писать здесь
+	// код для задачи №2 писать здесь
 	let sum = 0;
-	
 	if (marks.length > 5) {
 		console.log("Слишком много цифр");
-		while (marks.length > 5) {
-			marks.pop();
-		}
+		marks = marks.slice(0, 5);
 	}
-	
-	for (let i = 0; i <= marks.length; i++) {
-		sum += parseInt(marks[i]);
+
+	for (let i = 0; i < marks.length; i++) {
+		sum = sum + marks[i];
 	}
-	
-	return sum / marks.length;
+	let averageMark = sum / marks.length;
+	return averageMark;
 }
 
 
-
-
-
-
-
-
-
+function askDrink(name, dateOfBirthday) {
+	// код для задачи №3 писать здесь
+	//console.log(result)
+	//return result;
+}
