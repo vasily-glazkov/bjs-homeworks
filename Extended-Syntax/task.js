@@ -14,6 +14,7 @@ function getResult(a, b, c) {
 	// код для задачи №1 писать здесь
 	let x = [];
 	let d = (b ** 2) - (4 * a * c);
+	
 	if (d < 0) {
 		console.log("Корней нет");
 	} else if (d === 0) {
@@ -26,12 +27,7 @@ function getResult(a, b, c) {
 	return x;
 }
 
-function calculateDrinkTask() {
-	let name = window.personName.value;
-	let dateOfBirthday = new Date(window.dateOfBirthday.value);
-	let drink = askDrink(name, dateOfBirthday);
-	window.drink.textContent = drink;
-}
+
 
 function calculateAverageRating() {
 	let marks = window.marks.value.split("").map(Number).filter((n) => !isNaN(n) && n > 0);
@@ -42,21 +38,42 @@ function calculateAverageRating() {
 function getAverageMark(marks) {
 	// код для задачи №2 писать здесь
 	let sum = 0;
+	
+	// Определяем длину массива и сокращаем до 5 при необходимости
 	if (marks.length > 5) {
 		console.log("Слишком много цифр");
 		marks = marks.slice(0, 5);
 	}
-
+	
+	// Суммируем оценки
 	for (let i = 0; i < marks.length; i++) {
 		sum = sum + marks[i];
 	}
+	
+	// Вычисляем среднее значение и возвращем его
 	let averageMark = sum / marks.length;
 	return averageMark;
 }
 
+function calculateDrinkTask() {
+	let name = window.personName.value;
+	let dateOfBirthday = new Date(window.dateOfBirthday.value);
+	let drink = askDrink(name, dateOfBirthday);
+	window.drink.textContent = drink;
+}
 
 function askDrink(name, dateOfBirthday) {
-	// код для задачи №3 писать здесь
-	//console.log(result)
-	//return result;
+	// Создаем объект текущей даты
+	let current = new Date(); 
+	// Вычисляем возраст округленный в годах
+	let age = current.getFullYear() - dateOfBirthday.getFullYear(); 
+	
+	// Определяем подходит ли возраст
+	if (age >= 18) {
+		console.log(`Не желаете ли олд-фэшн, ${name}?`);
+
+	} else {
+		console.log(`Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`);
+		return;
+	}
 }
