@@ -51,8 +51,7 @@ function getAverageMark(marks) {
 	}
 
 	// Вычисляем среднее значение и возвращем его
-	let averageMark = sum / marks.length;
-	return averageMark;
+	return sum / marks.length;
 }
 
 function calculateDrinkTask() {
@@ -64,9 +63,9 @@ function calculateDrinkTask() {
 
 function askDrink(name, dateOfBirthday) {
 	// Создаем объект текущей даты
-	let current = new Date();
+	//let current = new Date();
 	// Вычисляем возраст округленный в годах
-	let age = current.getFullYear() - dateOfBirthday.getFullYear();
+	let age = new Date().getFullYear() - dateOfBirthday.getFullYear();
 
 	// Определяем подходит ли возраст
 	if (age >= 18) {
